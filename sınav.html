@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Team — Tech Solutions Inc.</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      .team-member .card-body h5 { margin-bottom: 0.25rem; }
+      .team-member .card { min-height: 180px; }
+      .card-img-top {
+        width: 120px; height: 120px; object-fit: cover;
+      }
+      .social-icons a {
+        margin: 0 5px; color: #333; transition: 0.3s;
+      }
+      .social-icons a:hover { color: #0d6efd; }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Tech Solutions Inc.</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menüyü aç">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a></li>
+              <li class="nav-item"><a class="nav-link" href="#team">Ekip</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+              <li class="nav-item">
+                <a class="btn btn-primary ms-2" href="#contact">Contact Us</a>
+              </li>
+
+              <!-- Language Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">🌐 Language</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><button class="dropdown-item" onclick="changeLang('tr')">🇹🇷 Türkçe</button></li>
+                  <li><button class="dropdown-item" onclick="changeLang('en')">🇬🇧 English</button></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="container py-5">
+      <section id="team" class="team-section">
+        <h2 class="mb-4" id="team-title">Ekibimiz</h2>
+
+        <div class="row g-4">
+          <!-- Team Member 1 -->
+          <article class="team-member col-12 col-md-6 col-lg-4">
+            <div class="card h-100 text-center">
+              <img src="images/indir.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Mehmet Nurhan">
+              <div class="card-body">
+                <h5 class="card-title">Mehmet Nurhan</h5>
+                <p class="card-text" id="ceo-role">CEO</p>
+                <div class="social-icons">
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Team Member 2 -->
+          <article class="team-member col-12 col-md-6 col-lg-4">
+            <div class="card h-100 text-center">
+              <img src="images/ali.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Ali Ozturk">
+              <div class="card-body">
+                <h5 class="card-title">Ali Ozturk</h5>
+                <p class="card-text" id="cto-role">CTO</p>
+                <div class="social-icons">
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Placeholder Member -->
+          <!-- Team Member 3 -->
+<article class="team-member col-12 col-md-6 col-lg-4">
+  <div class="card h-100 text-center">
+    <img src="images/elif.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Elif Yılmaz">
+    <div class="card-body">
+      <h5 class="card-title">Elif Yılmaz</h5>
+      <p class="card-text">Designer</p>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="contact" class="mt-5 border-top pt-3">
+        <p class="mb-0">&copy; <span id="year"></span> Tech Solutions Inc. — Tüm hakları saklıdır.</p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const langData = {
+        tr: { team: "Ekibimiz", ceo: "CEO", cto: "CTO" },
+        en: { team: "Our Team", ceo: "CEO", cto: "CTO" }
+      };
+
+      function changeLang(lang) {
+        document.getElementById("team-title").textContent = langData[lang].team;
+        document.getElementById("ceo-role").textContent = langData[lang].ceo;
+        document.getElementById("cto-role").textContent = langData[lang].cto;
+      }
+    </script>
+  </body>
+</html>
