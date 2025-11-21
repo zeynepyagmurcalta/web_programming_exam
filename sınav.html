@@ -10,20 +10,35 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <style>
-      .team-member .card-body h5 { margin-bottom: 0.25rem; }
-      .team-member .card { min-height: 180px; }
-      .card-img-top {
-        width: 120px; height: 120px; object-fit: cover;
-      }
-      .social-icons a {
-        margin: 0 5px; color: #333; transition: 0.3s;
-      }
-      .social-icons a:hover { color: #0d6efd; }
-    </style>
+   <style>
+  .team-member .card-body h5 { margin-bottom: 0.25rem; }
+  .team-member .card { min-height: 180px; }
+  .card-img-top {
+    width: 120px; height: 120px; object-fit: cover;
+  }
+  .social-icons a {
+  margin: 0 5px;
+  color: #333;
+  transition: 0.3s;
+  background: linear-gradient(45deg, #0d6efd, #6f42c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+
+  .card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+  }
+</style>
+
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -39,7 +54,10 @@
               <li class="nav-item"><a class="nav-link" href="#team">Ekip</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
               <li class="nav-item">
-                <a class="btn btn-light ms-2" href="#contact">Contact Us</a>
+                <button type="button" class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#contactModal">
+  Contact Us
+</button>
+
               </li>
 
               <!-- Language Dropdown -->
@@ -57,7 +75,9 @@
     </header>
 
     <!-- Main content -->
-    <main class="container py-5 mb-5">
+     
+    <main class="flex-fill container py-5 mb-5">
+
 
       <section id="team" class="team-section">
         <h2 class="mb-4" id="team-title">Ekibimiz</h2>
@@ -65,7 +85,8 @@
         <div class="row g-4">
           <!-- Team Member 1 -->
           <article class="team-member col-12 col-md-6 col-lg-4">
-            <div class="card h-100 text-center bg-light">
+            <div class="card h-100 text-center bg-light shadow-sm">
+
               <img src="images/indir.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Mehmet Nurhan">
               <div class="card-body">
                 <h5 class="card-title">Mehmet Nurhan</h5>
@@ -81,7 +102,8 @@
 
           <!-- Team Member 2 -->
           <article class="team-member col-12 col-md-6 col-lg-4">
-            <div class="card h-100 text-center bg-light">
+            <div class="card h-100 text-center bg-light shadow-sm">
+
 
               <img src="images/ali.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Ali Ozturk">
               <div class="card-body">
@@ -99,7 +121,8 @@
           <!-- Placeholder Member -->
           <!-- Team Member 3 -->
 <article class="team-member col-12 col-md-6 col-lg-4">
-  <div class="card h-100 text-center bg-light">
+  <div class="card h-100 text-center bg-light shadow-sm">
+
 
     <img src="images/elif.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Elif Yılmaz">
     <div class="card-body">
@@ -120,10 +143,40 @@
 
       <!-- Footer -->
       <footer id="contact" class="mt-5 border-top pt-3 text-center bg-dark text-white">
-  <p class="mb-0">&copy; <span id="year"></span> Tech Solutions Inc. — All rights reserved.</p>
+  <p class="mb-1">&copy; <span id="year"></span> Tech Solutions Inc. — All rights reserved.</p>
+  <p class="mb-0">📍 123 Tech Street, Istanbul, Turkey</p>
+  <div class="mt-2">
+    <a href="#"><i class="bi bi-twitter text-white mx-2"></i></a>
+    <a href="#"><i class="bi bi-linkedin text-white mx-2"></i></a>
+    <a href="#"><i class="bi bi-facebook text-white mx-2"></i></a>
+  </div>
 </footer>
 
+
     </main>
+
+    <!-- Contact Us Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-secondary text-white">
+
+        <h5 class="modal-title" id="contactModalLabel">Contact Information</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Company:</strong> Tech Solutions Inc.</p>
+        <p><strong>Address:</strong> 123 Main Street, Istanbul, Turkey</p>
+        <p><strong>Phone:</strong> +90 123 456 7890</p>
+        <p><strong>Email:</strong> info@techsolutions.com</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
